@@ -6,4 +6,4 @@ allOf:
         type: array
         description: The page content
         items:
-          $ref: './BeerDto.yaml'
+          $ref: './ApparelDto.yaml'

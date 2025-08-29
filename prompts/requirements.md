@@ -1112,17 +1112,11 @@ type ApparelFormProps = {
   isSubmitting: boolean;
 };
 
-const BEER_STYLES = [
-  'IPA',
-  'PALE_ALE',
-  'PORTER',
-  'STOUT',
-  'WHEAT',
-  'LAGER',
-  'PILSNER',
-  'SAISON',
-  'GOSE',
-  'SOUR',
+const APPAREL_STYLES = [
+  'Loose',
+  'Fit',
+  'Oversize',
+  'Stretch',
 ];
 
 export default function ApparelForm({ initialData, onSubmit, isSubmitting }: ApparelFormProps) {
@@ -1490,7 +1484,7 @@ describe('ApparelForm', () => {
   it('renders the form with initial data when provided', () => {
     const initialData = {
       apparelName: 'Test Apparel',
-      apparelStyle: 'IPA',
+      apparelStyle: 'Loose',
       upc: '123456789',
       price: 9.99,
       quantityOnHand: 100,
@@ -1538,7 +1532,7 @@ describe('ApparelForm', () => {
     await waitFor(() => {
       expect(mockOnSubmit).toHaveBeenCalledWith({
         apparelName: 'Test Apparel',
-        apparelStyle: 'IPA',
+        apparelStyle: 'Loose',
         upc: '123456789',
         price: 9.99,
         quantityOnHand: 100,
@@ -1607,7 +1601,7 @@ describe('apparelService', () => {
     it('should fetch apparels with filters and pagination', async () => {
       const mockResponse = {
         data: {
-          content: [{ id: 1, apparelName: 'IPA Apparel' }],
+          content: [{ id: 1, apparelName: 'Loose Apparel' }],
           totalElements: 1,
           totalPages: 1,
           size: 10,
@@ -1619,15 +1613,15 @@ describe('apparelService', () => {
 
       mockedApiClient.get.mockResolvedValueOnce(mockResponse);
 
-      const result = await apparelService.getAllApparels('IPA', 'IPA', 2, 10);
+      const result = await apparelService.getAllApparels('Loose', 'Loose', 2, 10);
 
       expect(mockedApiClient.get).toHaveBeenCalledWith('/apparels', {
         params: expect.any(URLSearchParams),
       });
 
       const params = new URLSearchParams();
-      params.append('apparelName', 'IPA');
-      params.append('apparelStyle', 'IPA');
+      params.append('apparelName', 'Loose');
+      params.append('apparelStyle', 'Loose');
       params.append('page', '2');
       params.append('size', '10');
 
@@ -1655,7 +1649,7 @@ describe('apparelService', () => {
     it('should create a new apparel', async () => {
       const newApparel = {
         apparelName: 'New Apparel',
-        apparelStyle: 'IPA',
+        apparelStyle: 'Loose',
         upc: '123456789',
         price: 9.99,
         quantityOnHand: 100,

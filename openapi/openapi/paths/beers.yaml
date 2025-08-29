@@ -1,21 +1,21 @@
 get:
   tags:
-    - Beer
-  summary: Get all beers
-  description: "Returns a paginated list of beers in the system with optional filtering by beer name and beer style."
-  operationId: getAllBeers
+    - Apparel
+  summary: Get all apparels
+  description: "Returns a paginated list of apparels in the system with optional filtering by apparel name and apparel style."
+  operationId: getAllApparels
   security:
     - api_key: []
   parameters:
-    - name: beerName
+    - name: apparelName
       in: query
-      description: Filter beers by name (optional)
+      description: Filter apparels by name (optional)
       required: false
       schema:
         type: string
-    - name: beerStyle
+    - name: apparelStyle
       in: query
-      description: Filter beers by style (optional)
+      description: Filter apparels by style (optional)
       required: false
       schema:
         type: string
@@ -37,19 +37,19 @@ get:
         minimum: 1
   responses:
     '200':
-      description: "Successfully retrieved the list of beers"
+      description: "Successfully retrieved the list of apparels"
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/PageOfBeerDto.yaml'
+            $ref: '../components/schemas/PageOfApparelDto.yaml'
           example:
             content:
               - id: 1
                 version: 0
                 createdDate: "2023-01-01T12:00:00Z"
                 updateDate: "2023-01-01T12:00:00Z"
-                beerName: "Mango Bobs"
-                beerStyle: "IPA"
+                apparelName: "Mango Bobs"
+                apparelStyle: "Loose"
                 upc: "0631234200036"
                 quantityOnHand: 100
                 price: 12.99
@@ -57,8 +57,8 @@ get:
                 version: 0
                 createdDate: "2023-01-02T10:00:00Z"
                 updateDate: "2023-01-02T10:00:00Z"
-                beerName: "Galaxy Cat"
-                beerStyle: "PALE_ALE"
+                apparelName: "Galaxy Cat"
+                apparelStyle: "Stretch"
                 upc: "0631234300019"
                 quantityOnHand: 75
                 price: 11.99
@@ -76,39 +76,39 @@ get:
       description: "Unauthorized"
 post:
   tags:
-    - Beer
-  summary: Create a new beer
-  description: "Creates a new beer in the system. The ID, version, createdDate, and updateDate fields will be ignored if provided."
-  operationId: createBeer
+    - Apparel
+  summary: Create a new apparel
+  description: "Creates a new apparel in the system. The ID, version, createdDate, and updateDate fields will be ignored if provided."
+  operationId: createApparel
   security:
     - api_key: []
   requestBody:
-    description: "Beer object to be created"
+    description: "Apparel object to be created"
     required: true
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/BeerDto.yaml'
+          $ref: '../components/schemas/ApparelDto.yaml'
         example:
-          beerName: "New Beer"
-          beerStyle: "LAGER"
+          apparelName: "New Apparel"
+          apparelStyle: "LAGER"
           upc: "0631234500033"
           quantityOnHand: 50
           price: 9.99
   responses:
     '201':
-      description: "Successfully created a new beer"
+      description: "Successfully created a new apparel"
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/BeerDto.yaml'
+            $ref: '../components/schemas/ApparelDto.yaml'
           example:
             id: 3
             version: 0
             createdDate: "2023-01-03T15:00:00Z"
             updateDate: "2023-01-03T15:00:00Z"
-            beerName: "New Beer"
-            beerStyle: "LAGER"
+            apparelName: "New Apparel"
+            apparelStyle: "LAGER"
             upc: "0631234500033"
             quantityOnHand: 50
             price: 9.99

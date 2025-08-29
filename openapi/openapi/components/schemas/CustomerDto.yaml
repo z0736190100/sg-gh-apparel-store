@@ -64,9 +64,9 @@ properties:
     description: "Postal code of the customer's address."
     type: string
     example: "62701"
-  beerOrders:
-    description: "Beer orders placed by this customer."
+  apparelOrders:
+    description: "Apparel orders placed by this customer."
     type: array
     items:
-      $ref: './BeerOrderDto.yaml'
+      $ref: './ApparelOrderDto.yaml'
     readOnly: true

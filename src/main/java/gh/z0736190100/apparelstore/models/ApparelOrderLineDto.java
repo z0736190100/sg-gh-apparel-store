@@ -22,7 +22,6 @@ public class ApparelOrderLineDto extends BaseEntityDto {
     private Integer apparelId;
     private String apparelName;
 
-    // style of the apparel, ALE, PALE ALE, IPA, etc
     private String apparelStyle;
     private String upc;
     

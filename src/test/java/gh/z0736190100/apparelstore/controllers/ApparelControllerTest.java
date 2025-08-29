@@ -50,7 +50,7 @@ class ApparelControllerTest {
         testApparel = ApparelDto.builder()
                 .id(1)
                 .apparelName("Test Apparel")
-                .apparelStyle("IPA")
+                .apparelStyle("Loose")
                 .upc("123456")
                 .price(new BigDecimal("12.99"))
                 .quantityOnHand(100)
@@ -130,11 +130,11 @@ class ApparelControllerTest {
         List<ApparelDto> apparels = Arrays.asList(testApparel);
         Page<ApparelDto> apparelPage = new PageImpl<>(apparels, PageRequest.of(0, 20), 1);
 
-        given(apparelService.getAllApparels(eq(null), eq("IPA"), any(Pageable.class))).willReturn(apparelPage);
+        given(apparelService.getAllApparels(eq(null), eq("Loose"), any(Pageable.class))).willReturn(apparelPage);
 
         // When/Then
         mockMvc.perform(get("/api/v1/apparels")
-                .param("apparelStyle", "IPA")
+                .param("apparelStyle", "Loose")
                 .param("page", "0")
                 .param("size", "20")
                 .accept(MediaType.APPLICATION_JSON))
@@ -143,7 +143,7 @@ class ApparelControllerTest {
                 .andExpect(jsonPath("$.content", hasSize(1)))
                 .andExpect(jsonPath("$.content[0].id", is(1)))
                 .andExpect(jsonPath("$.content[0].apparelName", is("Test Apparel")))
-                .andExpect(jsonPath("$.content[0].apparelStyle", is("IPA")))
+                .andExpect(jsonPath("$.content[0].apparelStyle", is("Loose")))
                 .andExpect(jsonPath("$.totalElements", is(1)))
                 .andExpect(jsonPath("$.totalPages", is(1)))
                 .andExpect(jsonPath("$.size", is(20)))
@@ -156,12 +156,12 @@ class ApparelControllerTest {
         List<ApparelDto> apparels = Arrays.asList(testApparel);
         Page<ApparelDto> apparelPage = new PageImpl<>(apparels, PageRequest.of(0, 20), 1);
 
-        given(apparelService.getAllApparels(eq("Test"), eq("IPA"), any(Pageable.class))).willReturn(apparelPage);
+        given(apparelService.getAllApparels(eq("Test"), eq("Loose"), any(Pageable.class))).willReturn(apparelPage);
 
         // When/Then
         mockMvc.perform(get("/api/v1/apparels")
                 .param("apparelName", "Test")
-                .param("apparelStyle", "IPA")
+                .param("apparelStyle", "Loose")
                 .param("page", "0")
                 .param("size", "20")
                 .accept(MediaType.APPLICATION_JSON))
@@ -170,7 +170,7 @@ class ApparelControllerTest {
                 .andExpect(jsonPath("$.content", hasSize(1)))
                 .andExpect(jsonPath("$.content[0].id", is(1)))
                 .andExpect(jsonPath("$.content[0].apparelName", is("Test Apparel")))
-                .andExpect(jsonPath("$.content[0].apparelStyle", is("IPA")))
+                .andExpect(jsonPath("$.content[0].apparelStyle", is("Loose")))
                 .andExpect(jsonPath("$.totalElements", is(1)))
                 .andExpect(jsonPath("$.totalPages", is(1)))
                 .andExpect(jsonPath("$.size", is(20)))
@@ -207,7 +207,7 @@ class ApparelControllerTest {
         // Given
         ApparelDto apparelToCreate = ApparelDto.builder()
                 .apparelName("New Apparel")
-                .apparelStyle("Stout")
+                .apparelStyle("Fit")
                 .upc("654321")
                 .price(new BigDecimal("14.99"))
                 .quantityOnHand(200)
@@ -216,7 +216,7 @@ class ApparelControllerTest {
         ApparelDto savedApparel = ApparelDto.builder()
                 .id(2)
                 .apparelName("New Apparel")
-                .apparelStyle("Stout")
+                .apparelStyle("Fit")
                 .upc("654321")
                 .price(new BigDecimal("14.99"))
                 .quantityOnHand(200)
@@ -238,7 +238,7 @@ class ApparelControllerTest {
         // Given
         ApparelDto apparelToUpdate = ApparelDto.builder()
                 .apparelName("Updated Apparel")
-                .apparelStyle("Lager")
+                .apparelStyle("Oversize")
                 .upc("789012")
                 .price(new BigDecimal("16.99"))
                 .quantityOnHand(150)
@@ -247,7 +247,7 @@ class ApparelControllerTest {
         ApparelDto updatedApparel = ApparelDto.builder()
                 .id(1)
                 .apparelName("Updated Apparel")
-                .apparelStyle("Lager")
+                .apparelStyle("Oversize")
                 .upc("789012")
                 .price(new BigDecimal("16.99"))
                 .quantityOnHand(150)
@@ -263,7 +263,7 @@ class ApparelControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id", is(1)))
                 .andExpect(jsonPath("$.apparelName", is("Updated Apparel")))
-                .andExpect(jsonPath("$.apparelStyle", is("Lager")));
+                .andExpect(jsonPath("$.apparelStyle", is("Oversize")));
     }
 
     @Test
@@ -271,7 +271,7 @@ class ApparelControllerTest {
         // Given
         ApparelDto apparelToUpdate = ApparelDto.builder()
                 .apparelName("Updated Apparel")
-                .apparelStyle("Lager")
+                .apparelStyle("Oversize")
                 .upc("789012")
                 .price(new BigDecimal("16.99"))
                 .quantityOnHand(150)
@@ -339,7 +339,7 @@ class ApparelControllerTest {
         ApparelDto patchedApparel = ApparelDto.builder()
                 .id(1)
                 .apparelName("Patched Apparel")
-                .apparelStyle("IPA") // Original value
+                .apparelStyle("Loose") // Original value
                 .upc("123456") // Original value
                 .price(new BigDecimal("15.99")) // Updated value
                 .quantityOnHand(100) // Original value
@@ -354,7 +354,7 @@ class ApparelControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id", is(1)))
                 .andExpect(jsonPath("$.apparelName", is("Patched Apparel")))
-                .andExpect(jsonPath("$.apparelStyle", is("IPA")))
+                .andExpect(jsonPath("$.apparelStyle", is("Loose")))
                 .andExpect(jsonPath("$.price", is(15.99)));
     }
 

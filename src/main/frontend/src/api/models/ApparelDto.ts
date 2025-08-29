@@ -27,7 +27,7 @@ export type ApparelDto = {
      */
     apparelName: string;
     /**
-     * Style of the apparel (e.g., ALE, PALE_ALE, IPA, etc.).
+     * Style of the apparel.
      */
     apparelStyle: string;
     /**

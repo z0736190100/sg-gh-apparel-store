@@ -34,7 +34,7 @@ const ApparelsPage = () => {
               <tbody>
                 <tr className="border-b">
                   <td className="p-2">Mango Bobs</td>
-                  <td className="p-2">IPA</td>
+                  <td className="p-2">Loose</td>
                   <td className="p-2">0631234200036</td>
                   <td className="p-2">$12.99</td>
                   <td className="p-2">100</td>
@@ -51,7 +51,7 @@ const ApparelsPage = () => {
                 </tr>
                 <tr className="border-b">
                   <td className="p-2">Galaxy Cat</td>
-                  <td className="p-2">PALE_ALE</td>
+                  <td className="p-2">Stretch</td>
                   <td className="p-2">0631234300019</td>
                   <td className="p-2">$11.99</td>
                   <td className="p-2">75</td>

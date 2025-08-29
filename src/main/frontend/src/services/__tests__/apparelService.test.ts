@@ -47,46 +47,46 @@ describe('ApparelService', () => {
     });
 
     it('should fetch apparels with name filter', async () => {
-      const mockApparels = [createMockApparel({ apparelName: 'IPA Apparel' })];
+      const mockApparels = [createMockApparel({ apparelName: 'Loose Apparel' })];
       const mockPage = createMockPage(mockApparels);
 
       mockApiService.getPaginatedWithNotification.mockResolvedValue(mockPage);
 
-      await apparelService.getApparels(undefined, undefined, 'IPA');
+      await apparelService.getApparels(undefined, undefined, 'Loose');
 
       expect(mockApiService.getPaginatedWithNotification).toHaveBeenCalledWith(
         '/api/v1/apparels',
         undefined,
         undefined,
-        [{ field: 'apparelName', value: 'IPA' }],
+        [{ field: 'apparelName', value: 'Loose' }],
         undefined
       );
     });
 
     it('should fetch apparels with style filter', async () => {
-      const mockApparels = [createMockApparel({ apparelStyle: 'IPA' })];
+      const mockApparels = [createMockApparel({ apparelStyle: 'Loose' })];
       const mockPage = createMockPage(mockApparels);
 
       mockApiService.getPaginatedWithNotification.mockResolvedValue(mockPage);
 
-      await apparelService.getApparels(undefined, undefined, undefined, 'IPA');
+      await apparelService.getApparels(undefined, undefined, undefined, 'Loose');
 
       expect(mockApiService.getPaginatedWithNotification).toHaveBeenCalledWith(
         '/api/v1/apparels',
         undefined,
         undefined,
-        [{ field: 'apparelStyle', value: 'IPA' }],
+        [{ field: 'apparelStyle', value: 'Loose' }],
         undefined
       );
     });
 
     it('should fetch apparels with both name and style filters', async () => {
-      const mockApparels = [createMockApparel({ apparelName: 'Test IPA', apparelStyle: 'IPA' })];
+      const mockApparels = [createMockApparel({ apparelName: 'Test Loose', apparelStyle: 'Loose' })];
       const mockPage = createMockPage(mockApparels);
 
       mockApiService.getPaginatedWithNotification.mockResolvedValue(mockPage);
 
-      await apparelService.getApparels(undefined, undefined, 'Test', 'IPA');
+      await apparelService.getApparels(undefined, undefined, 'Test', 'Loose');
 
       expect(mockApiService.getPaginatedWithNotification).toHaveBeenCalledWith(
         '/api/v1/apparels',
@@ -94,7 +94,7 @@ describe('ApparelService', () => {
         undefined,
         [
           { field: 'apparelName', value: 'Test' },
-          { field: 'apparelStyle', value: 'IPA' },
+          { field: 'apparelStyle', value: 'Loose' },
         ],
         undefined
       );
@@ -150,7 +150,7 @@ describe('ApparelService', () => {
     it('should create a new apparel', async () => {
       const newApparel: ApparelDto = {
         apparelName: 'New Apparel',
-        apparelStyle: 'IPA',
+        apparelStyle: 'Loose',
         upc: '123456789',
         quantityOnHand: 100,
         price: 12.99,
@@ -171,7 +171,7 @@ describe('ApparelService', () => {
     it('should handle validation errors', async () => {
       const invalidApparel: ApparelDto = {
         apparelName: '',
-        apparelStyle: 'IPA',
+        apparelStyle: 'Loose',
         upc: '123456789',
         quantityOnHand: 100,
         price: 12.99,
@@ -189,7 +189,7 @@ describe('ApparelService', () => {
       const updatedApparel: ApparelDto = {
         id: 1,
         apparelName: 'Updated Apparel',
-        apparelStyle: 'IPA',
+        apparelStyle: 'Loose',
         upc: '123456789',
         quantityOnHand: 150,
         price: 13.99,

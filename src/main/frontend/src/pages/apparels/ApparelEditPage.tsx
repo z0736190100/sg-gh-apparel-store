@@ -119,14 +119,10 @@ const ApparelEditPage: React.FC = () => {
 
   // Apparel style options
   const apparelStyleOptions = [
-    { value: 'IPA', label: 'IPA' },
-    { value: 'Lager', label: 'Lager' },
-    { value: 'Stout', label: 'Stout' },
-    { value: 'Porter', label: 'Porter' },
-    { value: 'Wheat', label: 'Wheat' },
-    { value: 'Pilsner', label: 'Pilsner' },
-    { value: 'Ale', label: 'Ale' },
-    { value: 'Pale Ale', label: 'Pale Ale' },
+    { value: 'Loose', label: 'Loose' },
+    { value: 'Oversize', label: 'Oversize' },
+    { value: 'Fit', label: 'Fit' },
+    { value: 'Stretch', label: 'Stretch' },
   ];
 
   if (initialLoading) {

@@ -1,33 +1,33 @@
 parameters:
   - name: id
     in: path
-    description: "ID of the beer to operate on"
+    description: "ID of the apparel to operate on"
     required: true
     schema:
       type: integer
       format: int32
 get:
   tags:
-    - Beer
-  summary: Get a beer by ID
-  description: "Returns a single beer identified by its ID."
-  operationId: getBeerById
+    - Apparel
+  summary: Get a apparel by ID
+  description: "Returns a single apparel identified by its ID."
+  operationId: getApparelById
   security:
     - api_key: []
   responses:
     '200':
-      description: "Successfully retrieved the beer"
+      description: "Successfully retrieved the apparel"
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/BeerDto.yaml'
+            $ref: '../components/schemas/ApparelDto.yaml'
           example:
             id: 1
             version: 0
             createdDate: "2023-01-01T12:00:00Z"
             updateDate: "2023-01-01T12:00:00Z"
-            beerName: "Mango Bobs"
-            beerStyle: "IPA"
+            apparelName: "Mango Bobs"
+            apparelStyle: "Loose"
             upc: "0631234200036"
             quantityOnHand: 100
             price: 12.99
@@ -36,43 +36,43 @@ get:
     '401':
       description: "Unauthorized"
     '404':
-      description: "Beer not found"
+      description: "Apparel not found"
 put:
   tags:
-    - Beer
-  summary: Update a beer
-  description: "Updates an existing beer identified by its ID. The ID in the path must match the ID in the request body."
-  operationId: updateBeer
+    - Apparel
+  summary: Update a apparel
+  description: "Updates an existing apparel identified by its ID. The ID in the path must match the ID in the request body."
+  operationId: updateApparel
   security:
     - api_key: []
   requestBody:
-    description: "Updated beer object"
+    description: "Updated apparel object"
     required: true
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/BeerDto.yaml'
+          $ref: '../components/schemas/ApparelDto.yaml'
         example:
           id: 1
-          beerName: "Updated Beer Name"
-          beerStyle: "IPA"
+          apparelName: "Updated Apparel Name"
+          apparelStyle: "Loose"
           upc: "0631234200036"
           quantityOnHand: 120
           price: 13.99
   responses:
     '200':
-      description: "Successfully updated the beer"
+      description: "Successfully updated the apparel"
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/BeerDto.yaml'
+            $ref: '../components/schemas/ApparelDto.yaml'
           example:
             id: 1
             version: 1
             createdDate: "2023-01-01T12:00:00Z"
             updateDate: "2023-01-04T09:30:00Z"
-            beerName: "Updated Beer Name"
-            beerStyle: "IPA"
+            apparelName: "Updated Apparel Name"
+            apparelStyle: "Loose"
             upc: "0631234200036"
             quantityOnHand: 120
             price: 13.99
@@ -81,39 +81,39 @@ put:
     '401':
       description: "Unauthorized"
     '404':
-      description: "Beer not found"
+      description: "Apparel not found"
 patch:
   tags:
-    - Beer
-  summary: Partially update a beer
-  description: "Partially updates an existing beer identified by its ID. Only the provided fields will be updated."
-  operationId: patchBeer
+    - Apparel
+  summary: Partially update a apparel
+  description: "Partially updates an existing apparel identified by its ID. Only the provided fields will be updated."
+  operationId: patchApparel
   security:
     - api_key: []
   requestBody:
-    description: "Partial beer object with only the fields to update"
+    description: "Partial apparel object with only the fields to update"
     required: true
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/BeerPatchDto.yaml'
+          $ref: '../components/schemas/ApparelPatchDto.yaml'
         example:
-          beerName: "Partially Updated Beer"
+          apparelName: "Partially Updated Apparel"
           price: 14.99
   responses:
     '200':
-      description: "Successfully updated the beer"
+      description: "Successfully updated the apparel"
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/BeerDto.yaml'
+            $ref: '../components/schemas/ApparelDto.yaml'
           example:
             id: 1
             version: 1
             createdDate: "2023-01-01T12:00:00Z"
             updateDate: "2023-01-04T09:30:00Z"
-            beerName: "Partially Updated Beer"
-            beerStyle: "IPA"
+            apparelName: "Partially Updated Apparel"
+            apparelStyle: "Loose"
             upc: "0631234200036"
             quantityOnHand: 100
             price: 14.99
@@ -122,21 +122,21 @@ patch:
     '401':
       description: "Unauthorized"
     '404':
-      description: "Beer not found"
+      description: "Apparel not found"
 delete:
   tags:
-    - Beer
-  summary: Delete a beer
-  description: "Deletes a beer identified by its ID."
-  operationId: deleteBeer
+    - Apparel
+  summary: Delete a apparel
+  description: "Deletes a apparel identified by its ID."
+  operationId: deleteApparel
   security:
     - api_key: []
   responses:
     '204':
-      description: "Successfully deleted the beer"
+      description: "Successfully deleted the apparel"
     '400':
       description: "Bad request"
     '401':
       description: "Unauthorized"
     '404':
-      description: "Beer not found"
+      description: "Apparel not found"

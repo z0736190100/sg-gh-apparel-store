@@ -44,17 +44,17 @@ externalDocs:
   description: "Find out how to create a GitHub repo for your OpenAPI definition."
   url: 'https://github.com/Redocly/create-openapi-repo'
 tags:
-  - name: Beer
-    description: "Operations for managing beer inventory."
-  - name: BeerOrder
-    description: "Operations for managing beer orders."
+  - name: Apparel
+    description: "Operations for managing apparel inventory."
+  - name: ApparelOrder
+    description: "Operations for managing apparel orders."
   - name: Customer
     description: "Operations for managing customers."
 x-tagGroups:
   - name: General
     tags:
-      - Beer
-      - BeerOrder
+      - Apparel
+      - ApparelOrder
       - Customer
 servers:
   - url: https://{tenant}/api/v1
@@ -64,40 +64,40 @@ servers:
         description: Your tenant id
   - url: https://example.com/api/v1
 paths:
-  '/api/v1/beers':
-    $ref: 'paths/beers.yaml'
-  '/api/v1/beers/{id}':
-    $ref: 'paths/beers_{id}.yaml'
-  '/api/v1/beer-orders':
-    $ref: 'paths/beer-orders.yaml'
-  '/api/v1/beer-orders/{id}':
-    $ref: 'paths/beer-orders_{id}.yaml'
-  '/api/v1/beer-orders/{beerOrderId}/shipments':
-    $ref: 'paths/beer-orders_{beerOrderId}_shipments.yaml'
-  '/api/v1/beer-orders/{beerOrderId}/shipments/{shipmentId}':
-    $ref: 'paths/beer-orders_{beerOrderId}_shipments_{shipmentId}.yaml'
+  '/api/v1/apparels':
+    $ref: 'paths/apparels.yaml'
+  '/api/v1/apparels/{id}':
+    $ref: 'paths/apparels_{id}.yaml'
+  '/api/v1/apparel-orders':
+    $ref: 'paths/apparel-orders.yaml'
+  '/api/v1/apparel-orders/{id}':
+    $ref: 'paths/apparel-orders_{id}.yaml'
+  '/api/v1/apparel-orders/{apparelOrderId}/shipments':
+    $ref: 'paths/apparel-orders_{apparelOrderId}_shipments.yaml'
+  '/api/v1/apparel-orders/{apparelOrderId}/shipments/{shipmentId}':
+    $ref: 'paths/apparel-orders_{apparelOrderId}_shipments_{shipmentId}.yaml'
   '/api/v1/customers':
     $ref: 'paths/customers.yaml'
   '/api/v1/customers/{id}':
     $ref: 'paths/customers_{id}.yaml'
 components:
   schemas:
-    BeerDto:
-      $ref: 'components/schemas/BeerDto.yaml'
-    BeerPatchDto:
-      $ref: 'components/schemas/BeerPatchDto.yaml'
-    BeerOrderDto:
-      $ref: 'components/schemas/BeerOrderDto.yaml'
-    BeerOrderLineDto:
-      $ref: 'components/schemas/BeerOrderLineDto.yaml'
-    BeerOrderShipmentDto:
-      $ref: 'components/schemas/BeerOrderShipmentDto.yaml'
+    ApparelDto:
+      $ref: 'components/schemas/ApparelDto.yaml'
+    ApparelPatchDto:
+      $ref: 'components/schemas/ApparelPatchDto.yaml'
+    ApparelOrderDto:
+      $ref: 'components/schemas/ApparelOrderDto.yaml'
+    ApparelOrderLineDto:
+      $ref: 'components/schemas/ApparelOrderLineDto.yaml'
+    ApparelOrderShipmentDto:
+      $ref: 'components/schemas/ApparelOrderShipmentDto.yaml'
     CustomerDto:
       $ref: 'components/schemas/CustomerDto.yaml'
     Page:
       $ref: 'components/schemas/Page.yaml'
-    PageOfBeerDto:
-      $ref: 'components/schemas/PageOfBeerDto.yaml'
+    PageOfApparelDto:
+      $ref: 'components/schemas/PageOfApparelDto.yaml'
   securitySchemes:
     main_auth:
       description: "Example description text of the OAuth2 scheme."
