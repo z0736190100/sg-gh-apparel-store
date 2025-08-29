@@ -1,0 +1,200 @@
+Issue Id,Issue Type,Summary,Description,Epic Name,Epic Link,Parent Id,Labels,Story Points
+E1,Epic,Project Setup & Configuration,"Establish the foundation for the React frontend application with proper tooling, configuration, and dependencies.",Project Setup & Configuration,,,frontend;setup,
+E1-1,Story,Initial Project Creation,"Create and initialize the React project.",,E1,,frontend;setup,1
+E1-1-1,Sub-task,Create React project with Vite + TypeScript,"Create a new React project using Vite and TypeScript in the src/main/frontend directory.",,,E1-1,frontend;setup,
+E1-1-2,Sub-task,Establish base project structure,"Set up the basic project structure following best practices.",,,E1-1,frontend;setup,
+E1-1-3,Sub-task,Configure package.json metadata,"Configure the initial package.json with appropriate metadata.",,,E1-1,frontend;setup,
+E1-2,Story,Vite Configuration,"Configure development and build tooling in Vite.",,E1,,frontend;build,2
+E1-2-1,Sub-task,Enable HMR in Vite dev server,"Configure Vite for development with hot module replacement.",,,E1-2,frontend;build,
+E1-2-2,Sub-task,Set up backend proxy,"Set up proxy settings to forward API requests to the Spring Boot backend.",,,E1-2,frontend;build,
+E1-2-3,Sub-task,Configure path aliases,"Configure path aliases for cleaner imports.",,,E1-2,frontend;build,
+E1-2-4,Sub-task,Set build output dir,"Configure build output directory to target/classes/static.",,,E1-2,frontend;build,
+E1-3,Story,Environment Configuration,"Implement environment management across environments.",,E1,,frontend;config,1
+E1-3-1,Sub-task,Define environment variables,"Create environment variable configuration for development, testing, and production.",,,E1-3,frontend;config,
+E1-3-2,Sub-task,Create .env files,"Set up .env files for different environments.",,,E1-3,frontend;config,
+E1-3-3,Sub-task,Load env in app,"Implement environment variable loading in the application.",,,E1-3,frontend;config,
+E1-4,Story,UI Library Setup,"Set up Tailwind, Shadcn, and Radix UI.",,E1,,frontend;ui,3
+E1-4-1,Sub-task,Install Tailwind + PostCSS,"Install and configure Tailwind CSS with proper PostCSS setup.",,,E1-4,frontend;ui,
+E1-4-2,Sub-task,Add Shadcn and Radix UI,"Set up Shadcn component library with the project's design system and configure Radix UI primitives.",,,E1-4,frontend;ui,
+E1-4-3,Sub-task,Install utility libraries,"Install and set up utility libraries (clsx, tailwind-merge, class-variance-authority).",,,E1-4,frontend;ui,
+E1-4-4,Sub-task,Add Lucide React icons,"Add and configure Lucide React for icons.",,,E1-4,frontend;ui,
+E1-5,Story,Code Quality Tools,"Establish linting, formatting, and TypeScript strictness.",,E1,,frontend;quality,2
+E1-5-1,Sub-task,Configure ESLint,"Set up ESLint with appropriate rules for React and TypeScript.",,,E1-5,frontend;quality,
+E1-5-2,Sub-task,Configure Prettier,"Configure Prettier for consistent code formatting.",,,E1-5,frontend;quality,
+E1-5-3,Sub-task,Set up pre-commit hooks,"Create pre-commit hooks for linting and formatting.",,,E1-5,frontend;quality,
+E1-5-4,Sub-task,TS config - strict mode,"Set up TypeScript configuration with strict type checking.",,,E1-5,frontend;quality,
+E2,Epic,API Integration,"Create a robust API integration layer that communicates with the Spring Boot backend services.",API Integration,,,frontend;api,
+E2-1,Story,OpenAPI Client Generation,"Generate TypeScript types from OpenAPI spec and scripts.",,E2,,frontend;api,3
+E2-1-1,Sub-task,Set up OpenAPI Generator,"Set up OpenAPI Generator to create TypeScript types from the OpenAPI specification.",,,E2-1,frontend;api,
+E2-1-2,Sub-task,Configure generator output,"Configure the generator to output to the appropriate directory.",,,E2-1,frontend;api,
+E2-1-3,Sub-task,Add npm scripts to regenerate,"Create npm scripts to regenerate types when the API changes.",,,E2-1,frontend;api,
+E2-2,Story,API Service Layer,"Create Axios service with interceptors, logging, and error handling.",,E2,,frontend;api,3
+E2-2-1,Sub-task,Create Axios base service,"Create a base API service using Axios with interceptors for authentication.",,,E2-2,frontend;api,
+E2-2-2,Sub-task,Global error handling,"Implement global error handling for API requests.",,,E2-2,frontend;api,
+E2-2-3,Sub-task,Request/response logging,"Set up request/response logging for development.",,,E2-2,frontend;api,
+E2-2-4,Sub-task,API utilities,"Create utility functions for common API operations.",,,E2-2,frontend;api,
+E2-3,Story,Apparel Service Module,"Implement Apparel CRUD service and types with pagination/filtering.",,E2,,frontend;api;apparel,2
+E2-3-1,Sub-task,Apparel CRUD functions,"Implement service functions for Apparel CRUD operations.",,,E2-3,frontend;api;apparel,
+E2-3-2,Sub-task,Apparel TypeScript types,"Create TypeScript interfaces for Apparel-related data structures.",,,E2-3,frontend;api;apparel,
+E2-3-3,Sub-task,Apparel pagination/filtering,"Add pagination and filtering support for Apparel listings.",,,E2-3,frontend;api;apparel,
+E2-4,Story,Customer Service Module,"Implement customer CRUD service and types with pagination/filtering.",,E2,,frontend;api;customer,2
+E2-4-1,Sub-task,Customer CRUD functions,"Implement service functions for customer CRUD operations.",,,E2-4,frontend;api;customer,
+E2-4-2,Sub-task,Customer TypeScript types,"Create TypeScript interfaces for customer-related data structures.",,,E2-4,frontend;api;customer,
+E2-4-3,Sub-task,Customer pagination/filtering,"Add pagination and filtering support for customer listings.",,,E2-4,frontend;api;customer,
+E2-5,Story,Apparel Order Service Module,"Implement order CRUD service, types, pagination, and status management.",,E2,,frontend;api;order,3
+E2-5-1,Sub-task,Order CRUD functions,"Implement service functions for Apparel order CRUD operations.",,,E2-5,frontend;api;order,
+E2-5-2,Sub-task,Order TypeScript types,"Create TypeScript interfaces for order-related data structures.",,,E2-5,frontend;api;order,
+E2-5-3,Sub-task,Order pagination/filtering,"Add pagination and filtering support for order listings.",,,E2-5,frontend;api;order,
+E2-5-4,Sub-task,Order status management,"Implement specialized functions for order status management.",,,E2-5,frontend;api;order,
+E3,Epic,Build Process Integration,"Integrate the frontend build process with the Maven build lifecycle to create a seamless development and deployment experience.",Build Process Integration,,,frontend;build,
+E3-1,Story,Maven Plugin Configuration,"Configure frontend-maven-plugin, npm installation and build scripts in Maven.",,E3,,frontend;build,2
+E3-1-1,Sub-task,Configure frontend-maven-plugin,"Configure the frontend-maven-plugin in pom.xml.",,,E3-1,frontend;build,
+E3-1-2,Sub-task,Set up npm via Maven,"Set up npm installation through Maven.",,,E3-1,frontend;build,
+E3-1-3,Sub-task,Configure npm run build in Maven,"Configure npm run scripts for building through Maven.",,,E3-1,frontend;build,
+E3-1-4,Sub-task,Execution phases,"Set up proper execution phases for the plugin.",,,E3-1,frontend;build,
+E3-2,Story,Build Process Optimization,"Set production build optimizations and asset configuration.",,E3,,frontend;performance,2
+E3-2-1,Sub-task,Vite prod optimizations,"Configure production build optimizations in Vite.",,,E3-2,frontend;performance,
+E3-2-2,Sub-task,Asset optimization,"Set up asset optimization for production builds.",,,E3-2,frontend;performance,
+E3-2-3,Sub-task,Code splitting,"Configure code splitting for better performance.",,,E3-2,frontend;performance,
+E3-3,Story,Clean Plugin Configuration,"Ensure clean lifecycle removes generated frontend assets.",,E3,,frontend;build,1
+E3-3-1,Sub-task,Configure maven-clean-plugin,"Configure maven-clean-plugin to clean generated frontend assets.",,,E3-3,frontend;build,
+E3-3-2,Sub-task,Define file patterns,"Set up proper file patterns for cleaning.",,,E3-3,frontend;build,
+E3-3-3,Sub-task,Integrate with clean lifecycle,"Ensure clean integration with the Maven clean lifecycle.",,,E3-3,frontend;build,
+E3-4,Story,Development Workflow,"Create scripts and docs for dev, test, and prod builds; concurrent dev setup.",,E3,,frontend;docs,1
+E3-4-1,Sub-task,Add npm scripts,"Create npm scripts for development, testing, and production builds.",,,E3-4,frontend;docs,
+E3-4-2,Sub-task,Document workflow,"Document the development workflow for the team.",,,E3-4,frontend;docs,
+E3-4-3,Sub-task,Concurrent frontend/backend,"Set up concurrent running of frontend and backend during development.",,,E3-4,frontend;docs,
+E4,Epic,Component Development & Routing,"Develop the core UI components and routing structure for the application.",Component Development & Routing,,,frontend;ui;routing,
+E4-1,Story,Application Routing,"Set up router structure, nested/protected routes, and code splitting.",,E4,,frontend;routing,2
+E4-1-1,Sub-task,Main route structure,"Set up React Router with the main route structure.",,,E4-1,frontend;routing,
+E4-1-2,Sub-task,Nested routes,"Implement nested routes for resource management.",,,E4-1,frontend;routing,
+E4-1-3,Sub-task,Protected routes,"Create protected routes for authenticated sections.",,,E4-1,frontend;routing,
+E4-1-4,Sub-task,Route-based code splitting,"Implement route-based code splitting.",,,E4-1,frontend;routing,
+E4-2,Story,Layout Components,"Build app shell (header, footer, navigation) and containers.",,E4,,frontend;ui,3
+E4-2-1,Sub-task,App layout,"Create the main application layout with header, footer, and navigation.",,,E4-2,frontend;ui,
+E4-2-2,Sub-task,Responsive sidebar,"Implement responsive sidebar navigation.",,,E4-2,frontend;ui,
+E4-2-3,Sub-task,Breadcrumbs,"Create breadcrumb navigation component.",,,E4-2,frontend;ui,
+E4-2-4,Sub-task,Page containers,"Develop page container components.",,,E4-2,frontend;ui,
+E4-3,Story,Form Components,"Reusable form components, validation, and submission patterns.",,E4,,frontend;ui;forms,3
+E4-3-1,Sub-task,Shadcn-based inputs,"Develop reusable form components based on Shadcn.",,,E4-3,frontend;ui;forms,
+E4-3-2,Sub-task,Validation utilities,"Create form validation utilities.",,,E4-3,frontend;ui;forms,
+E4-3-3,Sub-task,Submission handling,"Implement form submission handling with loading states.",,,E4-3,frontend;ui;forms,
+E4-3-4,Sub-task,Specialized inputs,"Create specialized input components for different data types.",,,E4-3,frontend;ui;forms,
+E4-4,Story,Table Components,"Reusable tables with sorting, pagination, filters, selection, and actions.",,E4,,frontend;ui;tables,3
+E4-4-1,Sub-task,Sortable/paged tables,"Develop reusable table components with sorting and pagination.",,,E4-4,frontend;ui;tables,
+E4-4-2,Sub-task,Table filtering,"Create table filtering components.",,,E4-4,frontend;ui;tables,
+E4-4-3,Sub-task,Row selection,"Implement row selection functionality.",,,E4-4,frontend;ui;tables,
+E4-4-4,Sub-task,Action menus,"Add table action menus.",,,E4-4,frontend;ui;tables,
+E4-5,Story,Dialog Components,"Reusable dialogs, modal forms, toasts, and loading overlays.",,E4,,frontend;ui;dialogs,2
+E4-5-1,Sub-task,Confirm dialogs,"Create reusable dialog components for confirmations.",,,E4-5,frontend;ui;dialogs,
+E4-5-2,Sub-task,Modal forms,"Implement modal forms for create/edit operations.",,,E4-5,frontend;ui;dialogs,
+E4-5-3,Sub-task,Toast notifications,"Develop toast notification system.",,,E4-5,frontend;ui;dialogs,
+E4-5-4,Sub-task,Loading overlays,"Create loading overlay components.",,,E4-5,frontend;ui;dialogs,
+E4-6,Story,Navigation Components,"Nav menus, tabs, pagination controls, and breadcrumbs.",,E4,,frontend;ui;navigation,2
+E4-6-1,Sub-task,Main navigation menu,"Implement main navigation menu.",,,E4-6,frontend;ui;navigation,
+E4-6-2,Sub-task,Tab navigation,"Create tab navigation for resource details.",,,E4-6,frontend;ui;navigation,
+E4-6-3,Sub-task,Pagination controls,"Develop pagination controls.",,,E4-6,frontend;ui;navigation,
+E4-6-4,Sub-task,Breadcrumb navigation,"Implement breadcrumb navigation.",,,E4-6,frontend;ui;navigation,
+E5,Epic,Apparel Management Feature,"Implement the Apparel management feature set, allowing users to view, create, update, and delete Apparels.",Apparel Management Feature,,,frontend;apparel,
+E5-1,Story,Apparel Listing Page,"Implement listing with pagination, filtering, sorting, quick actions, and responsive design.",,E5,,frontend;apparel,3
+E5-1-1,Sub-task,Apparel list with pagination,"Create an Apparel listing page with pagination.",,,E5-1,frontend;apparel,
+E5-1-2,Sub-task,Filtering and sorting,"Implement filtering and sorting functionality.",,,E5-1,frontend;apparel,
+E5-1-3,Sub-task,Row quick actions,"Add quick actions for each Apparel item.",,,E5-1,frontend;apparel,
+E5-1-4,Sub-task,Responsive layout,"Create a responsive design for different screen sizes.",,,E5-1,frontend;apparel,
+E5-2,Story,Apparel Detail View,"Detailed view with properties, related entities, and tabbed sections.",,E5,,frontend;apparel,2
+E5-2-1,Sub-task,Detail page layout,"Implement a detailed view for individual Apparels.",,,E5-2,frontend;apparel,
+E5-2-2,Sub-task,Show properties,"Display all Apparel properties in a user-friendly format.",,,E5-2,frontend;apparel,
+E5-2-3,Sub-task,Related navigation,"Add navigation to related entities.",,,E5-2,frontend;apparel,
+E5-2-4,Sub-task,Tabbed sections,"Create tabs for different sections of Apparel information.",,,E5-2,frontend;apparel,
+E5-3,Story,Apparel Creation Form,"Form with validation, image upload, and submission handlers.",,E5,,frontend;apparel;forms,3
+E5-3-1,Sub-task,Create Apparel form,"Develop a form for creating new Apparels.",,,E5-3,frontend;apparel;forms,
+E5-3-2,Sub-task,Client-side validation,"Implement client-side validation.",,,E5-3,frontend;apparel;forms,
+E5-3-3,Sub-task,Image upload,"Add image upload functionality.",,,E5-3,frontend;apparel;forms,
+E5-3-4,Sub-task,Submission handlers,"Create success/error handling for form submission.",,,E5-3,frontend;apparel;forms,
+E5-4,Story,Apparel Update Form,"Update form pre-populated with data; optimistic updates and validation.",,E5,,frontend;apparel;forms,2
+E5-4-1,Sub-task,Update form,"Create a form for updating existing Apparels.",,,E5-4,frontend;apparel;forms,
+E5-4-2,Sub-task,Pre-populate fields,"Pre-populate form with existing Apparel data.",,,E5-4,frontend;apparel;forms,
+E5-4-3,Sub-task,Optimistic updates,"Implement optimistic updates.",,,E5-4,frontend;apparel;forms,
+E5-4-4,Sub-task,Validation,"Add validation for all fields.",,,E5-4,frontend;apparel;forms,
+E5-5,Story,Apparel Deletion,"Deletion flow with confirmation and list refresh.",,E5,,frontend;apparel,1
+E5-5-1,Sub-task,Delete Apparel item,"Implement Apparel deletion functionality.",,,E5-5,frontend;apparel,
+E5-5-2,Sub-task,Confirm dialog,"Create confirmation dialog before deletion.",,,E5-5,frontend;apparel,
+E5-5-3,Sub-task,Handle states,"Handle success/error states.",,,E5-5,frontend;apparel,
+E5-5-4,Sub-task,Update list after deletion,"Update the Apparel list after successful deletion.",,,E5-5,frontend;apparel,
+E6,Epic,Customer Management Feature,"Implement the customer management feature set, allowing users to view, create, update, and delete customers.",Customer Management Feature,,,frontend;customer,
+E6-1,Story,Customer Listing Page,"Listing with pagination, filters, quick actions, responsive design.",,E6,,frontend;customer,3
+E6-1-1,Sub-task,Customer list with pagination,"Create a customer listing page with pagination.",,,E6-1,frontend;customer,
+E6-1-2,Sub-task,Filtering and sorting,"Implement filtering and sorting functionality.",,,E6-1,frontend;customer,
+E6-1-3,Sub-task,Row quick actions,"Add quick actions for each customer.",,,E6-1,frontend;customer,
+E6-1-4,Sub-task,Responsive layout,"Create a responsive design for different screen sizes.",,,E6-1,frontend;customer,
+E6-2,Story,Customer Detail View,"Detailed view with properties, related orders, tabbed sections.",,E6,,frontend;customer,2
+E6-2-1,Sub-task,Detail page layout,"Implement a detailed view for individual customers.",,,E6-2,frontend;customer,
+E6-2-2,Sub-task,Show properties,"Display all customer properties in a user-friendly format.",,,E6-2,frontend;customer,
+E6-2-3,Sub-task,Related orders,"Show related Apparel orders.",,,E6-2,frontend;customer,
+E6-2-4,Sub-task,Tabbed sections,"Create tabs for different sections of customer information.",,,E6-2,frontend;customer,
+E6-3,Story,Customer Creation Form,"Customer create form with validation and submission handlers.",,E6,,frontend;customer;forms,2
+E6-3-1,Sub-task,Create customer form,"Develop a form for creating new customers.",,,E6-3,frontend;customer;forms,
+E6-3-2,Sub-task,Client-side validation,"Implement client-side validation.",,,E6-3,frontend;customer;forms,
+E6-3-3,Sub-task,Submission handlers,"Create success/error handling for form submission.",,,E6-3,frontend;customer;forms,
+E6-4,Story,Customer Update Form,"Update form with pre-populated data, optimistic updates, validation.",,E6,,frontend;customer;forms,2
+E6-4-1,Sub-task,Update form,"Create a form for updating existing customers.",,,E6-4,frontend;customer;forms,
+E6-4-2,Sub-task,Pre-populate fields,"Pre-populate form with existing customer data.",,,E6-4,frontend;customer;forms,
+E6-4-3,Sub-task,Optimistic updates,"Implement optimistic updates.",,,E6-4,frontend;customer;forms,
+E6-4-4,Sub-task,Validation,"Add validation for all fields.",,,E6-4,frontend;customer;forms,
+E6-5,Story,Customer Deletion,"Deletion flow with confirmation and list refresh.",,E6,,frontend;customer,1
+E6-5-1,Sub-task,Delete customer,"Implement customer deletion functionality.",,,E6-5,frontend;customer,
+E6-5-2,Sub-task,Confirm dialog,"Create confirmation dialog before deletion.",,,E6-5,frontend;customer,
+E6-5-3,Sub-task,Handle states,"Handle success/error states.",,,E6-5,frontend;customer,
+E6-5-4,Sub-task,Update list after deletion,"Update the customer list after successful deletion.",,,E6-5,frontend;customer,
+E7,Epic,Apparel Order Management Feature,"Implement the Apparel order management feature set, allowing users to view, create, update, and manage Apparel orders.",Apparel Order Management Feature,,,frontend;order,
+E7-1,Story,Order Listing Page,"Implement listing with pagination, status/date filters, quick actions, responsive design.",,E7,,frontend;order,3
+E7-1-1,Sub-task,Order list with pagination,"Create an order listing page with pagination.",,,E7-1,frontend;order,
+E7-1-2,Sub-task,Filter by status/date,"Implement filtering by status and date.",,,E7-1,frontend;order,
+E7-1-3,Sub-task,Row quick actions,"Add quick actions for each order.",,,E7-1,frontend;order,
+E7-1-4,Sub-task,Responsive layout,"Create a responsive design for different screen sizes.",,,E7-1,frontend;order,
+E7-2,Story,Order Detail View,"Detailed view with properties, line items, status history, tabbed sections.",,E7,,frontend;order,3
+E7-2-1,Sub-task,Detail page layout,"Implement a detailed view for individual orders.",,,E7-2,frontend;order,
+E7-2-2,Sub-task,Show properties/line items,"Display all order properties and line items.",,,E7-2,frontend;order,
+E7-2-3,Sub-task,Status history,"Show order status history.",,,E7-2,frontend;order,
+E7-2-4,Sub-task,Tabbed sections,"Create tabs for different sections of order information.",,,E7-2,frontend;order,
+E7-3,Story,Order Creation Form,"Create order form with customer selection, dynamic line items, validation, inventory checks.",,E7,,frontend;order;forms,4
+E7-3-1,Sub-task,Order create form,"Develop a form for creating new orders.",,,E7-3,frontend;order;forms,
+E7-3-2,Sub-task,Customer selection,"Implement customer selection.",,,E7-3,frontend;order;forms,
+E7-3-3,Sub-task,Dynamic line items,"Create dynamic line item addition/removal.",,,E7-3,frontend;order;forms,
+E7-3-4,Sub-task,Validation,"Add validation for all fields.",,,E7-3,frontend;order;forms,
+E7-3-5,Sub-task,Inventory checking,"Implement inventory checking during order creation.",,,E7-3,frontend;order;forms,
+E7-4,Story,Order Update Form,"Update form with editable line items and status update.",,E7,,frontend;order;forms,3
+E7-4-1,Sub-task,Update form,"Create a form for updating existing orders.",,,E7-4,frontend;order;forms,
+E7-4-2,Sub-task,Modify line items,"Allow modification of line items.",,,E7-4,frontend;order;forms,
+E7-4-3,Sub-task,Status updates,"Implement status update functionality.",,,E7-4,frontend;order;forms,
+E7-5,Story,Order Shipment Management,"Shipment functionality with tracking, status workflow, and inventory allocation.",,E7,,frontend;order;shipment,3
+E7-5-1,Sub-task,Shipment actions,"Implement order shipment functionality.",,,E7-5,frontend;order;shipment,
+E7-5-2,Sub-task,Tracking UI,"Create shipment tracking interface.",,,E7-5,frontend;order;shipment,
+E7-5-3,Sub-task,Status workflow,"Add status update workflow.",,,E7-5,frontend;order;shipment,
+E7-5-4,Sub-task,Inventory allocation,"Implement allocation and deallocation of inventory.",,,E7-5,frontend;order;shipment,
+E8,Epic,Testing,"Implement comprehensive testing for the frontend application to ensure reliability and maintainability.",Testing,,,frontend;testing,
+E8-1,Story,Testing Environment Setup,"Configure test tooling, mocks, and coverage.",,E8,,frontend;testing,2
+E8-1-1,Sub-task,Configure Jest + RTL,"Configure Jest and React Testing Library.",,,E8-1,frontend;testing,
+E8-1-2,Sub-task,Test utilities,"Set up test utilities and helpers.",,,E8-1,frontend;testing,
+E8-1-3,Sub-task,Mock services,"Create mock services for API testing.",,,E8-1,frontend;testing,
+E8-1-4,Sub-task,Coverage reporting,"Configure test coverage reporting.",,,E8-1,frontend;testing,
+E8-2,Story,Component Unit Tests,"Unit tests for reusable UI components, rendering, interactions, snapshots.",,E8,,frontend;testing,4
+E8-2-1,Sub-task,Write component tests,"Write unit tests for all reusable UI components.",,,E8-2,frontend;testing,
+E8-2-2,Sub-task,Render & interact,"Test component rendering and interactions.",,,E8-2,frontend;testing,
+E8-2-3,Sub-task,Snapshot tests,"Implement snapshot testing for UI components.",,,E8-2,frontend;testing,
+E8-2-4,Sub-task,Coverage threshold,"Ensure adequate test coverage.",,,E8-2,frontend;testing,
+E8-3,Story,Service Unit Tests,"Unit tests for API services with error handling and mocks.",,E8,,frontend;testing,3
+E8-3-1,Sub-task,Write service tests,"Write unit tests for API service modules.",,,E8-3,frontend;testing,
+E8-3-2,Sub-task,Error and edge cases,"Test error handling and edge cases.",,,E8-3,frontend;testing,
+E8-3-3,Sub-task,Mock API responses,"Mock API responses for consistent testing.",,,E8-3,frontend;testing,
+E8-3-4,Sub-task,Coverage threshold,"Ensure adequate test coverage.",,,E8-3,frontend;testing,
+E8-4,Story,Integration Tests,"Integration and E2E tests for key flows and responsiveness.",,E8,,frontend;testing,4
+E8-4-1,Sub-task,Key flow tests,"Write integration tests for key user flows.",,,E8-4,frontend;testing,
+E8-4-2,Sub-task,Forms + API interactions,"Test form submissions and API interactions.",,,E8-4,frontend;testing,
+E8-4-3,Sub-task,E2E critical paths,"Implement end-to-end testing for critical paths.",,,E8-4,frontend;testing,
+E8-4-4,Sub-task,Responsive behavior,"Test responsive behavior.",,,E8-4,frontend;testing,
+E8-5,Story,Accessibility Testing,"Automated and manual a11y testing; keyboard navigation; fixes.",,E8,,frontend;testing;a11y,3
+E8-5-1,Sub-task,Add a11y tests,"Implement accessibility testing.",,,E8-5,frontend;testing;a11y,
+E8-5-2,Sub-task,WCAG conformance,"Ensure all components meet WCAG standards.",,,E8-5,frontend;testing;a11y,
+E8-5-3,Sub-task,Keyboard navigation,"Test keyboard navigation.",,,E8-5,frontend;testing;a11y,
+E8-5-4,Sub-task,Fix issues,"Fix identified accessibility issues.",,,E8-5,frontend;testing;a11y,
