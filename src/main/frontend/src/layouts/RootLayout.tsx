@@ -37,7 +37,7 @@ const RootLayout: React.FC = () => {
         <div className="flex h-full flex-col">
           {/* Sidebar header */}
           <div className="flex h-16 items-center justify-between px-4 border-b">
-            <h1 className="text-xl font-bold text-gray-900">Apparel Service</h1>
+            <h1 className="text-xl font-bold text-gray-900">Apparel Store</h1>
             <Button
               variant="ghost"
               size="sm"
@@ -116,7 +116,7 @@ const RootLayout: React.FC = () => {
         {/* Footer */}
         <footer className="border-t bg-white py-6">
           <div className="px-6 text-center text-sm text-gray-600">
-            &copy; {new Date().getFullYear()} Apparel Service. All rights reserved.
+            &copy; {new Date().getFullYear()} good_habit: get another one with us! All rights reserved.
           </div>
         </footer>
       </div>
