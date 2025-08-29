@@ -146,7 +146,3 @@ npm run test:coverage
 - Run backend only: `./mvnw spring-boot:run`
 - Frontend dev: `cd src/main/frontend && npm run dev`
 - Lint OpenAPI: `cd openapi && npm test`
-
-## License
-
-MIT (see headers).
