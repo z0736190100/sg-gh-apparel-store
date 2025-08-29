@@ -39,7 +39,7 @@ class ApparelOrderLineRepositoryTest {
         // Create and save a test apparel
         testApparel = Apparel.builder()
                 .apparelName("Test Apparel")
-                .apparelStyle("IPA")
+                .apparelStyle("Loose")
                 .upc("123456")
                 .price(new BigDecimal("12.99"))
                 .quantityOnHand(100)

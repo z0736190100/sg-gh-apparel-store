@@ -19,7 +19,7 @@ class ApparelMapperTest {
         Apparel apparel = Apparel.builder()
                 .id(1)
                 .apparelName("Original Apparel")
-                .apparelStyle("IPA")
+                .apparelStyle("Loose")
                 .upc("123456")
                 .price(new BigDecimal("12.99"))
                 .quantityOnHand(100)
@@ -37,7 +37,7 @@ class ApparelMapperTest {
         // Then
         assertThat(apparel.getId()).isEqualTo(1); // Should not change
         assertThat(apparel.getApparelName()).isEqualTo("Updated Apparel"); // Should be updated
-        assertThat(apparel.getApparelStyle()).isEqualTo("IPA"); // Should not change
+        assertThat(apparel.getApparelStyle()).isEqualTo("Loose"); // Should not change
         assertThat(apparel.getUpc()).isEqualTo("123456"); // Should not change
         assertThat(apparel.getPrice()).isEqualTo(new BigDecimal("14.99")); // Should be updated
         assertThat(apparel.getQuantityOnHand()).isEqualTo(100); // Should not change

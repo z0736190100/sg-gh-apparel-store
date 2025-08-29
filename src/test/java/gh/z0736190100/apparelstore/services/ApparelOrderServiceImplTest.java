@@ -62,7 +62,7 @@ class ApparelOrderServiceImplTest {
         // Create test apparel
         testApparel = Apparel.builder()
                 .apparelName("Test Apparel")
-                .apparelStyle("IPA")
+                .apparelStyle("Loose")
                 .upc("123456")
                 .price(new BigDecimal("12.99"))
                 .quantityOnHand(100)
@@ -116,7 +116,7 @@ class ApparelOrderServiceImplTest {
                 .id(1)
                 .apparelId(1)
                 .apparelName("Test Apparel")
-                .apparelStyle("IPA")
+                .apparelStyle("Loose")
                 .upc("123456")
                 .orderQuantity(2)
                 .quantityAllocated(2)

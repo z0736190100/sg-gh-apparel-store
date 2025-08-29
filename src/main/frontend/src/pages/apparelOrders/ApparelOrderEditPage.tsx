@@ -64,10 +64,9 @@ const ApparelOrderEditPage: React.FC = () => {
     ];
 
     const mockApparels = [
-      { id: 1, name: 'Mango Bobs', style: 'IPA', price: 12.99, quantityOnHand: 100 },
-      { id: 2, name: 'Galaxy Cat', style: 'PALE_ALE', price: 11.99, quantityOnHand: 75 },
-      { id: 3, name: 'Pinball Porter', style: 'PORTER', price: 13.99, quantityOnHand: 50 },
-      { id: 4, name: 'Pumpkin Ale', style: 'ALE', price: 10.99, quantityOnHand: 120 },
+      { id: 1, name: 'Mango Bobs', style: 'Loose', price: 12.99, quantityOnHand: 100 },
+      { id: 2, name: 'Galaxy Cat', style: 'Stretch', price: 11.99, quantityOnHand: 75 },
+      { id: 3, name: 'Pinball Fit', style: 'Fit', price: 13.99, quantityOnHand: 50 },
     ];
 
     // Mock order data
@@ -78,7 +77,7 @@ const ApparelOrderEditPage: React.FC = () => {
       status: 'NEW',
       lineItems: [
         { id: 1, apparelId: 1, apparelName: 'Mango Bobs', quantity: 2, price: 12.99 },
-        { id: 2, apparelId: 3, apparelName: 'Pinball Porter', quantity: 1, price: 13.99 },
+        { id: 2, apparelId: 3, apparelName: 'Pinball Fit', quantity: 1, price: 13.99 },
       ],
     };
 

@@ -46,7 +46,7 @@ class ApparelServiceImplTest {
         testApparel = Apparel.builder()
                 .id(1)
                 .apparelName("Test Apparel")
-                .apparelStyle("IPA")
+                .apparelStyle("Loose")
                 .upc("123456")
                 .price(new BigDecimal("12.99"))
                 .quantityOnHand(100)
@@ -55,7 +55,7 @@ class ApparelServiceImplTest {
         testApparelDto = ApparelDto.builder()
                 .id(1)
                 .apparelName("Test Apparel")
-                .apparelStyle("IPA")
+                .apparelStyle("Loose")
                 .upc("123456")
                 .price(new BigDecimal("12.99"))
                 .quantityOnHand(100)
@@ -124,7 +124,7 @@ class ApparelServiceImplTest {
     @Test
     void getAllApparelsWithApparelStyleFilter() {
         // Given
-        String apparelStyle = "IPA";
+        String apparelStyle = "Loose";
         Pageable pageable = PageRequest.of(0, 20);
         List<Apparel> apparels = Arrays.asList(testApparel);
         Page<Apparel> apparelPage = new PageImpl<>(apparels, pageable, 1);
@@ -138,7 +138,7 @@ class ApparelServiceImplTest {
         // Then
         assertThat(result.getContent()).hasSize(1);
         assertThat(result.getContent().get(0).getApparelName()).isEqualTo("Test Apparel");
-        assertThat(result.getContent().get(0).getApparelStyle()).isEqualTo("IPA");
+        assertThat(result.getContent().get(0).getApparelStyle()).isEqualTo("Loose");
         assertThat(result.getTotalElements()).isEqualTo(1);
         verify(apparelRepository, times(1)).findAllByApparelNameContainingIgnoreCaseAndApparelStyleContainingIgnoreCase("", apparelStyle, pageable);
         verify(apparelMapper, times(1)).apparelToApparelDto(any(Apparel.class));
@@ -148,7 +148,7 @@ class ApparelServiceImplTest {
     void getAllApparelsWithApparelNameAndApparelStyleFilter() {
         // Given
         String apparelName = "Test";
-        String apparelStyle = "IPA";
+        String apparelStyle = "Loose";
         Pageable pageable = PageRequest.of(0, 20);
         List<Apparel> apparels = Arrays.asList(testApparel);
         Page<Apparel> apparelPage = new PageImpl<>(apparels, pageable, 1);
@@ -162,7 +162,7 @@ class ApparelServiceImplTest {
         // Then
         assertThat(result.getContent()).hasSize(1);
         assertThat(result.getContent().get(0).getApparelName()).isEqualTo("Test Apparel");
-        assertThat(result.getContent().get(0).getApparelStyle()).isEqualTo("IPA");
+        assertThat(result.getContent().get(0).getApparelStyle()).isEqualTo("Loose");
         assertThat(result.getTotalElements()).isEqualTo(1);
         verify(apparelRepository, times(1)).findAllByApparelNameContainingIgnoreCaseAndApparelStyleContainingIgnoreCase(apparelName, apparelStyle, pageable);
         verify(apparelMapper, times(1)).apparelToApparelDto(any(Apparel.class));
@@ -202,7 +202,7 @@ class ApparelServiceImplTest {
         // Given
         ApparelDto apparelDtoToSave = ApparelDto.builder()
                 .apparelName("New Apparel")
-                .apparelStyle("Stout")
+                .apparelStyle("Fit")
                 .upc("654321")
                 .price(new BigDecimal("14.99"))
                 .quantityOnHand(200)
@@ -210,7 +210,7 @@ class ApparelServiceImplTest {
 
         Apparel apparelToSave = Apparel.builder()
                 .apparelName("New Apparel")
-                .apparelStyle("Stout")
+                .apparelStyle("Fit")
                 .upc("654321")
                 .price(new BigDecimal("14.99"))
                 .quantityOnHand(200)
@@ -219,7 +219,7 @@ class ApparelServiceImplTest {
         Apparel savedApparel = Apparel.builder()
                 .id(2)
                 .apparelName("New Apparel")
-                .apparelStyle("Stout")
+                .apparelStyle("Fit")
                 .upc("654321")
                 .price(new BigDecimal("14.99"))
                 .quantityOnHand(200)
@@ -228,7 +228,7 @@ class ApparelServiceImplTest {
         ApparelDto savedApparelDto = ApparelDto.builder()
                 .id(2)
                 .apparelName("New Apparel")
-                .apparelStyle("Stout")
+                .apparelStyle("Fit")
                 .upc("654321")
                 .price(new BigDecimal("14.99"))
                 .quantityOnHand(200)
@@ -256,7 +256,7 @@ class ApparelServiceImplTest {
         ApparelDto apparelDtoToUpdate = ApparelDto.builder()
                 .id(1)
                 .apparelName("Updated Apparel")
-                .apparelStyle("Lager")
+                .apparelStyle("Oversize")
                 .upc("789012")
                 .price(new BigDecimal("16.99"))
                 .quantityOnHand(150)
@@ -265,7 +265,7 @@ class ApparelServiceImplTest {
         Apparel apparelToUpdate = Apparel.builder()
                 .id(1)
                 .apparelName("Updated Apparel")
-                .apparelStyle("Lager")
+                .apparelStyle("Oversize")
                 .upc("789012")
                 .price(new BigDecimal("16.99"))
                 .quantityOnHand(150)
@@ -274,7 +274,7 @@ class ApparelServiceImplTest {
         Apparel updatedApparel = Apparel.builder()
                 .id(1)
                 .apparelName("Updated Apparel")
-                .apparelStyle("Lager")
+                .apparelStyle("Oversize")
                 .upc("789012")
                 .price(new BigDecimal("16.99"))
                 .quantityOnHand(150)
@@ -283,7 +283,7 @@ class ApparelServiceImplTest {
         ApparelDto updatedApparelDto = ApparelDto.builder()
                 .id(1)
                 .apparelName("Updated Apparel")
-                .apparelStyle("Lager")
+                .apparelStyle("Oversize")
                 .upc("789012")
                 .price(new BigDecimal("16.99"))
                 .quantityOnHand(150)
@@ -328,7 +328,7 @@ class ApparelServiceImplTest {
         Apparel existingApparel = Apparel.builder()
                 .id(1)
                 .apparelName("Original Apparel")
-                .apparelStyle("IPA")
+                .apparelStyle("Loose")
                 .upc("123456")
                 .price(new BigDecimal("12.99"))
                 .quantityOnHand(100)
@@ -337,7 +337,7 @@ class ApparelServiceImplTest {
         Apparel patchedApparel = Apparel.builder()
                 .id(1)
                 .apparelName("Patched Apparel")
-                .apparelStyle("IPA")
+                .apparelStyle("Loose")
                 .upc("123456")
                 .price(new BigDecimal("15.99"))
                 .quantityOnHand(100)
@@ -346,7 +346,7 @@ class ApparelServiceImplTest {
         ApparelDto patchedApparelDto = ApparelDto.builder()
                 .id(1)
                 .apparelName("Patched Apparel")
-                .apparelStyle("IPA")
+                .apparelStyle("Loose")
                 .upc("123456")
                 .price(new BigDecimal("15.99"))
                 .quantityOnHand(100)

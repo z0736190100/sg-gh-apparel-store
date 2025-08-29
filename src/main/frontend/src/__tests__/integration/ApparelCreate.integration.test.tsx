@@ -40,8 +40,8 @@ describe('Apparel Creation Integration', () => {
     // Mock successful apparel creation
     const newApparel = createMockApparel({
       id: 1,
-      apparelName: 'Test IPA',
-      apparelStyle: 'IPA',
+      apparelName: 'Test Loose',
+      apparelStyle: 'Loose',
       price: 12.99,
       quantityOnHand: 100,
     });
@@ -51,7 +51,7 @@ describe('Apparel Creation Integration', () => {
     const mockFormState = {
       values: {
         apparelName: 'Test Apparel',
-        apparelStyle: 'IPA',
+        apparelStyle: 'Loose',
         upc: '123456789',
         price: 12.99,
         quantityOnHand: 100,
@@ -91,7 +91,7 @@ describe('Apparel Creation Integration', () => {
 
     // Test form interaction
     const apparelNameInput = screen.getByLabelText(/apparel name/i);
-    await user.type(apparelNameInput, 'Test IPA');
+    await user.type(apparelNameInput, 'Test Loose');
     expect(mockFormState.setValue).toHaveBeenCalledWith('apparelName', expect.any(String));
 
     // Test form submission
@@ -163,7 +163,7 @@ describe('Apparel Creation Integration', () => {
     const mockFormState = {
       values: {
         apparelName: 'Test Apparel',
-        apparelStyle: 'IPA',
+        apparelStyle: 'Loose',
         upc: '123456789',
         price: 12.99,
         quantityOnHand: 100,
@@ -208,7 +208,7 @@ describe('Apparel Creation Integration', () => {
     const mockFormState = {
       values: {
         apparelName: 'Test Apparel',
-        apparelStyle: 'IPA',
+        apparelStyle: 'Loose',
         upc: '123456789',
         price: 12.99,
         quantityOnHand: 100,

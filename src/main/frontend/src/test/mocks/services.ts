@@ -8,9 +8,9 @@ export const mockApparelService = {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   getApparels: jest.fn().mockImplementation((_params = {}) => {
     const mockApparels = [
-      createMockApparel({ id: 1, apparelName: 'Mango Bobs', apparelStyle: 'IPA' }),
-      createMockApparel({ id: 2, apparelName: 'Galaxy Cat', apparelStyle: 'PALE_ALE' }),
-      createMockApparel({ id: 3, apparelName: 'Pinball Porter', apparelStyle: 'PORTER' }),
+      createMockApparel({ id: 1, apparelName: 'Mango Bobs', apparelStyle: 'Loose' }),
+      createMockApparel({ id: 2, apparelName: 'Galaxy Cat', apparelStyle: 'Stretch' }),
+      createMockApparel({ id: 3, apparelName: 'Pinball Fit', apparelStyle: 'Fit' }),
     ];
     return Promise.resolve(createMockPage(mockApparels));
   }),

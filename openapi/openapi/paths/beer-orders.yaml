@@ -1,20 +1,20 @@
 get:
   tags:
-    - BeerOrder
-  summary: Get all beer orders
-  description: "Returns a list of all beer orders in the system."
-  operationId: getAllBeerOrders
+    - ApparelOrder
+  summary: Get all apparel orders
+  description: "Returns a list of all apparel orders in the system."
+  operationId: getAllApparelOrders
   security:
     - api_key: []
   responses:
     '200':
-      description: "Successfully retrieved the list of beer orders"
+      description: "Successfully retrieved the list of apparel orders"
       content:
         application/json:
           schema:
             type: array
             items:
-              $ref: '../components/schemas/BeerOrderDto.yaml'
+              $ref: '../components/schemas/ApparelOrderDto.yaml'
           example:
             - id: 1
               version: 0
@@ -23,14 +23,14 @@ get:
               customerRef: "CUST-123"
               paymentAmount: 129.99
               status: "COMPLETE"
-              beerOrderLines:
+              apparelOrderLines:
                 - id: 1
                   version: 0
                   createdDate: "2023-01-01T12:00:00Z"
                   updateDate: "2023-01-01T12:00:00Z"
-                  beerId: 1
-                  beerName: "Mango Bobs"
-                  beerStyle: "IPA"
+                  apparelId: 1
+                  apparelName: "Mango Bobs"
+                  apparelStyle: "Loose"
                   upc: "0631234200036"
                   orderQuantity: 10
                   quantityAllocated: 10
@@ -42,14 +42,14 @@ get:
               customerRef: "CUST-456"
               paymentAmount: 59.95
               status: "NEW"
-              beerOrderLines:
+              apparelOrderLines:
                 - id: 2
                   version: 0
                   createdDate: "2023-01-02T10:00:00Z"
                   updateDate: "2023-01-02T10:00:00Z"
-                  beerId: 2
-                  beerName: "Galaxy Cat"
-                  beerStyle: "PALE_ALE"
+                  apparelId: 2
+                  apparelName: "Galaxy Cat"
+                  apparelStyle: "Stretch"
                   upc: "0631234300019"
                   orderQuantity: 5
                   quantityAllocated: 0
@@ -58,45 +58,45 @@ get:
       description: "Unauthorized"
 post:
   tags:
-    - BeerOrder
-  summary: Create a new beer order
-  description: "Creates a new beer order in the system. The ID, version, createdDate, and updateDate fields will be ignored if provided."
-  operationId: createBeerOrder
+    - ApparelOrder
+  summary: Create a new apparel order
+  description: "Creates a new apparel order in the system. The ID, version, createdDate, and updateDate fields will be ignored if provided."
+  operationId: createApparelOrder
   security:
     - api_key: []
   requestBody:
-    description: "Beer order object to be created"
+    description: "Apparel order object to be created"
     required: true
     content:
       application/json:
         schema:
-          $ref: '../components/schemas/BeerOrderDto.yaml'
+          $ref: '../components/schemas/ApparelOrderDto.yaml'
         example:
           customerRef: "CUST-789"
           paymentAmount: 79.99
           status: "NEW"
-          beerOrderLines:
-            - beerId: 1
-              beerName: "Mango Bobs"
-              beerStyle: "IPA"
+          apparelOrderLines:
+            - apparelId: 1
+              apparelName: "Mango Bobs"
+              apparelStyle: "Loose"
               upc: "0631234200036"
               orderQuantity: 6
               quantityAllocated: 0
               status: "PENDING"
-            - beerId: 3
-              beerName: "Pinball Porter"
-              beerStyle: "PORTER"
+            - apparelId: 3
+              apparelName: "Pinball Fit"
+              apparelStyle: "Fit"
               upc: "0083783375213"
               orderQuantity: 3
               quantityAllocated: 0
               status: "PENDING"
   responses:
     '201':
-      description: "Successfully created a new beer order"
+      description: "Successfully created a new apparel order"
       content:
         application/json:
           schema:
-            $ref: '../components/schemas/BeerOrderDto.yaml'
+            $ref: '../components/schemas/ApparelOrderDto.yaml'
           example:
             id: 3
             version: 0
@@ -105,14 +105,14 @@ post:
             customerRef: "CUST-789"
             paymentAmount: 79.99
             status: "NEW"
-            beerOrderLines:
+            apparelOrderLines:
               - id: 3
                 version: 0
                 createdDate: "2023-01-03T15:00:00Z"
                 updateDate: "2023-01-03T15:00:00Z"
-                beerId: 1
-                beerName: "Mango Bobs"
-                beerStyle: "IPA"
+                apparelId: 1
+                apparelName: "Mango Bobs"
+                apparelStyle: "Loose"
                 upc: "0631234200036"
                 orderQuantity: 6
                 quantityAllocated: 0
@@ -121,9 +121,9 @@ post:
                 version: 0
                 createdDate: "2023-01-03T15:00:00Z"
                 updateDate: "2023-01-03T15:00:00Z"
-                beerId: 3
-                beerName: "Pinball Porter"
-                beerStyle: "PORTER"
+                apparelId: 3
+                apparelName: "Pinball Fit"
+                apparelStyle: "Fit"
                 upc: "0083783375213"
                 orderQuantity: 3
                 quantityAllocated: 0

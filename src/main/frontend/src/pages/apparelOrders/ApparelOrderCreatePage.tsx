@@ -64,10 +64,9 @@ const ApparelOrderCreatePage: React.FC = () => {
     ];
 
     const mockApparels = [
-      { id: 1, name: 'Mango Bobs', style: 'IPA', price: 12.99, quantityOnHand: 100 },
-      { id: 2, name: 'Galaxy Cat', style: 'PALE_ALE', price: 11.99, quantityOnHand: 75 },
-      { id: 3, name: 'Pinball Porter', style: 'PORTER', price: 13.99, quantityOnHand: 50 },
-      { id: 4, name: 'Pumpkin Ale', style: 'ALE', price: 10.99, quantityOnHand: 120 },
+      { id: 1, name: 'Mango Bobs', style: 'Loose', price: 12.99, quantityOnHand: 100 },
+      { id: 2, name: 'Galaxy Cat', style: 'Stretch', price: 11.99, quantityOnHand: 75 },
+      { id: 3, name: 'Pinball Fit', style: 'Fit', price: 13.99, quantityOnHand: 50 },
     ];
 
     // Simulate API call delay

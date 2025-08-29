@@ -22,7 +22,6 @@ public class ApparelDto extends BaseEntityDto {
     @NotBlank(message = "Apparel name is required")
     private String apparelName;
 
-    // style of the apparel, ALE, PALE ALE, IPA, etc
     @NotBlank(message = "Apparel style is required")
     private String apparelStyle;
 

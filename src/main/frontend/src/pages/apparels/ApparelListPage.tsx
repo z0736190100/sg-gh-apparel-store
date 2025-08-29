@@ -158,12 +158,10 @@ const ApparelListPage: React.FC = () => {
       label: 'Apparel Style',
       type: 'select' as const,
       options: [
-        { value: 'IPA', label: 'IPA' },
-        { value: 'Lager', label: 'Lager' },
-        { value: 'Stout', label: 'Stout' },
-        { value: 'Pilsner', label: 'Pilsner' },
-        { value: 'Wheat', label: 'Wheat' },
-        { value: 'Porter', label: 'Porter' },
+        { value: 'Loose', label: 'Loose' },
+        { value: 'Oversize', label: 'Oversize' },
+        { value: 'Fit', label: 'Fit' },
+        { value: 'Stretch', label: 'Stretch' },
       ],
     },
   ];

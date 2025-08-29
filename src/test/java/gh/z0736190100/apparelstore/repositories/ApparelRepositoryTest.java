@@ -25,7 +25,7 @@ class ApparelRepositoryTest {
         // Given
         Apparel apparel = Apparel.builder()
                 .apparelName("Test Apparel")
-                .apparelStyle("IPA")
+                .apparelStyle("Loose")
                 .upc("123456")
                 .price(new BigDecimal("12.99"))
                 .quantityOnHand(100)
@@ -44,7 +44,7 @@ class ApparelRepositoryTest {
         // Given
         Apparel apparel = Apparel.builder()
                 .apparelName("Test Apparel")
-                .apparelStyle("IPA")
+                .apparelStyle("Loose")
                 .upc("123456")
                 .price(new BigDecimal("12.99"))
                 .quantityOnHand(100)
@@ -65,7 +65,7 @@ class ApparelRepositoryTest {
         // Given
         Apparel apparel = Apparel.builder()
                 .apparelName("Original Name")
-                .apparelStyle("IPA")
+                .apparelStyle("Loose")
                 .upc("123456")
                 .price(new BigDecimal("12.99"))
                 .quantityOnHand(100)
@@ -85,7 +85,7 @@ class ApparelRepositoryTest {
         // Given
         Apparel apparel = Apparel.builder()
                 .apparelName("Delete Me")
-                .apparelStyle("Lager")
+                .apparelStyle("Oversize")
                 .upc("654321")
                 .price(new BigDecimal("9.99"))
                 .quantityOnHand(50)
@@ -106,14 +106,14 @@ class ApparelRepositoryTest {
         apparelRepository.deleteAll(); // Clear any existing data
         Apparel apparel1 = Apparel.builder()
                 .apparelName("Apparel 1")
-                .apparelStyle("IPA")
+                .apparelStyle("Loose")
                 .upc("111111")
                 .price(new BigDecimal("11.99"))
                 .quantityOnHand(100)
                 .build();
         Apparel apparel2 = Apparel.builder()
                 .apparelName("Apparel 2")
-                .apparelStyle("Stout")
+                .apparelStyle("Fit")
                 .upc("222222")
                 .price(new BigDecimal("13.99"))
                 .quantityOnHand(200)
@@ -133,21 +133,21 @@ class ApparelRepositoryTest {
         apparelRepository.deleteAll(); // Clear any existing data
         Apparel apparel1 = Apparel.builder()
                 .apparelName("Test Apparel")
-                .apparelStyle("IPA")
+                .apparelStyle("Loose")
                 .upc("111111")
                 .price(new BigDecimal("11.99"))
                 .quantityOnHand(100)
                 .build();
         Apparel apparel2 = Apparel.builder()
                 .apparelName("Another Test Apparel")
-                .apparelStyle("Stout")
+                .apparelStyle("Fit")
                 .upc("222222")
                 .price(new BigDecimal("13.99"))
                 .quantityOnHand(200)
                 .build();
         Apparel apparel3 = Apparel.builder()
                 .apparelName("Not Matching")
-                .apparelStyle("Lager")
+                .apparelStyle("Oversize")
                 .upc("333333")
                 .price(new BigDecimal("10.99"))
                 .quantityOnHand(150)
@@ -172,14 +172,14 @@ class ApparelRepositoryTest {
         apparelRepository.deleteAll(); // Clear any existing data
         Apparel apparel1 = Apparel.builder()
                 .apparelName("Apparel 1")
-                .apparelStyle("IPA")
+                .apparelStyle("Loose")
                 .upc("111111")
                 .price(new BigDecimal("11.99"))
                 .quantityOnHand(100)
                 .build();
         Apparel apparel2 = Apparel.builder()
                 .apparelName("Apparel 2")
-                .apparelStyle("Stout")
+                .apparelStyle("Fit")
                 .upc("222222")
                 .price(new BigDecimal("13.99"))
                 .quantityOnHand(200)
@@ -204,7 +204,7 @@ class ApparelRepositoryTest {
         for (int i = 1; i <= 25; i++) {
             Apparel apparel = Apparel.builder()
                     .apparelName("Test Apparel " + i)
-                    .apparelStyle(i % 2 == 0 ? "IPA" : "Stout")
+                    .apparelStyle(i % 2 == 0 ? "Loose" : "Fit")
                     .upc("1111" + i)
                     .price(new BigDecimal("11.99"))
                     .quantityOnHand(100 + i)
@@ -242,29 +242,29 @@ class ApparelRepositoryTest {
         // Given
         apparelRepository.deleteAll(); // Clear any existing data
         Apparel apparel1 = Apparel.builder()
-                .apparelName("Test IPA")
-                .apparelStyle("IPA")
+                .apparelName("Test Loose")
+                .apparelStyle("Loose")
                 .upc("111111")
                 .price(new BigDecimal("11.99"))
                 .quantityOnHand(100)
                 .build();
         Apparel apparel2 = Apparel.builder()
-                .apparelName("Test Stout")
-                .apparelStyle("Stout")
+                .apparelName("Test Fit")
+                .apparelStyle("Fit")
                 .upc("222222")
                 .price(new BigDecimal("13.99"))
                 .quantityOnHand(200)
                 .build();
         Apparel apparel3 = Apparel.builder()
-                .apparelName("Another IPA")
-                .apparelStyle("IPA")
+                .apparelName("Another Loose")
+                .apparelStyle("Loose")
                 .upc("333333")
                 .price(new BigDecimal("10.99"))
                 .quantityOnHand(150)
                 .build();
         Apparel apparel4 = Apparel.builder()
                 .apparelName("Not Matching")
-                .apparelStyle("Lager")
+                .apparelStyle("Oversize")
                 .upc("444444")
                 .price(new BigDecimal("9.99"))
                 .quantityOnHand(120)
@@ -274,13 +274,13 @@ class ApparelRepositoryTest {
         Pageable pageable = PageRequest.of(0, 10);
 
         // When
-        Page<Apparel> apparelsPage = apparelRepository.findAllByApparelNameContainingIgnoreCaseAndApparelStyleContainingIgnoreCase("Test", "IPA", pageable);
+        Page<Apparel> apparelsPage = apparelRepository.findAllByApparelNameContainingIgnoreCaseAndApparelStyleContainingIgnoreCase("Test", "Loose", pageable);
 
         // Then
         assertThat(apparelsPage.getContent()).hasSize(1);
         assertThat(apparelsPage.getTotalElements()).isEqualTo(1);
-        assertThat(apparelsPage.getContent().get(0).getApparelName()).isEqualTo("Test IPA");
-        assertThat(apparelsPage.getContent().get(0).getApparelStyle()).isEqualTo("IPA");
+        assertThat(apparelsPage.getContent().get(0).getApparelName()).isEqualTo("Test Loose");
+        assertThat(apparelsPage.getContent().get(0).getApparelStyle()).isEqualTo("Loose");
     }
 
     @Test
@@ -288,22 +288,22 @@ class ApparelRepositoryTest {
         // Given
         apparelRepository.deleteAll(); // Clear any existing data
         Apparel apparel1 = Apparel.builder()
-                .apparelName("Test IPA")
-                .apparelStyle("IPA")
+                .apparelName("Test Loose")
+                .apparelStyle("Loose")
                 .upc("111111")
                 .price(new BigDecimal("11.99"))
                 .quantityOnHand(100)
                 .build();
         Apparel apparel2 = Apparel.builder()
-                .apparelName("Another IPA")
-                .apparelStyle("IPA")
+                .apparelName("Another Loose")
+                .apparelStyle("Loose")
                 .upc("222222")
                 .price(new BigDecimal("13.99"))
                 .quantityOnHand(200)
                 .build();
         Apparel apparel3 = Apparel.builder()
-                .apparelName("Test Stout")
-                .apparelStyle("Stout")
+                .apparelName("Test Fit")
+                .apparelStyle("Fit")
                 .upc("333333")
                 .price(new BigDecimal("10.99"))
                 .quantityOnHand(150)
@@ -313,13 +313,13 @@ class ApparelRepositoryTest {
         Pageable pageable = PageRequest.of(0, 10);
 
         // When
-        Page<Apparel> apparelsPage = apparelRepository.findAllByApparelNameContainingIgnoreCaseAndApparelStyleContainingIgnoreCase("", "IPA", pageable);
+        Page<Apparel> apparelsPage = apparelRepository.findAllByApparelNameContainingIgnoreCaseAndApparelStyleContainingIgnoreCase("", "Loose", pageable);
 
         // Then
         assertThat(apparelsPage.getContent()).hasSize(2);
         assertThat(apparelsPage.getTotalElements()).isEqualTo(2);
-        assertThat(apparelsPage.getContent().get(0).getApparelStyle()).isEqualTo("IPA");
-        assertThat(apparelsPage.getContent().get(1).getApparelStyle()).isEqualTo("IPA");
+        assertThat(apparelsPage.getContent().get(0).getApparelStyle()).isEqualTo("Loose");
+        assertThat(apparelsPage.getContent().get(1).getApparelStyle()).isEqualTo("Loose");
     }
 
     @Test
@@ -327,22 +327,22 @@ class ApparelRepositoryTest {
         // Given
         apparelRepository.deleteAll(); // Clear any existing data
         Apparel apparel1 = Apparel.builder()
-                .apparelName("Test IPA")
-                .apparelStyle("IPA")
+                .apparelName("Test Loose")
+                .apparelStyle("Loose")
                 .upc("111111")
                 .price(new BigDecimal("11.99"))
                 .quantityOnHand(100)
                 .build();
         Apparel apparel2 = Apparel.builder()
-                .apparelName("Test Stout")
-                .apparelStyle("Stout")
+                .apparelName("Test Fit")
+                .apparelStyle("Fit")
                 .upc("222222")
                 .price(new BigDecimal("13.99"))
                 .quantityOnHand(200)
                 .build();
         Apparel apparel3 = Apparel.builder()
                 .apparelName("Another Apparel")
-                .apparelStyle("Lager")
+                .apparelStyle("Oversize")
                 .upc("333333")
                 .price(new BigDecimal("10.99"))
                 .quantityOnHand(150)
@@ -374,7 +374,7 @@ class ApparelRepositoryTest {
                 .build();
         Apparel apparel2 = Apparel.builder()
                 .apparelName("Another Apparel")
-                .apparelStyle("Stout")
+                .apparelStyle("Fit")
                 .upc("222222")
                 .price(new BigDecimal("13.99"))
                 .quantityOnHand(200)

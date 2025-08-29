@@ -63,7 +63,7 @@ class ApparelOrderMapperTest {
         // Create test apparel
         testApparel = Apparel.builder()
                 .apparelName("Test Apparel")
-                .apparelStyle("IPA")
+                .apparelStyle("Loose")
                 .upc("123456")
                 .price(new BigDecimal("12.99"))
                 .quantityOnHand(100)
@@ -132,7 +132,7 @@ class ApparelOrderMapperTest {
                 .id(2)
                 .apparelId(1)
                 .apparelName("Test Apparel")
-                .apparelStyle("IPA")
+                .apparelStyle("Loose")
                 .upc("123456")
                 .orderQuantity(3)
                 .quantityAllocated(0)
